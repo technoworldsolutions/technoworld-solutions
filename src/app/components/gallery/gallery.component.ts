@@ -268,52 +268,39 @@ export class GalleryComponent {
 
   // inside your component class
 
-dialogOpen = false;
-dialogImage: string | null = null;
-dialogVideo: string | null = null;
-dialogFeedback: Feedback | null = null;
+  dialogOpen = false;
+  dialogImage: string | null = null;
+  dialogVideo: string | null = null;
+  dialogFeedback: Feedback | null = null;
   dialogData: Feedback | null = null;
 
-openImage(src: string) {
-  this.dialogImage = src;
-  this.dialogVideo = null;
-  this.dialogFeedback = null;
-  this.dialogOpen = true;
-}
+  openImage(src: string) {
+    this.dialogImage = src;
+    this.dialogVideo = null;
+    this.dialogFeedback = null;
+    this.dialogOpen = true;
+  }
 
 
-openVideo(vid: string) {
-  this.dialogVideo = vid;
-  this.dialogImage = null;
-  this.dialogFeedback = null;
-  this.dialogOpen = true;
-}
+  openVideo(vid: string) {
+    this.dialogVideo = vid;
+    this.dialogImage = null;
+    this.dialogFeedback = null;
+    this.dialogOpen = true;
+  }
 
-openFeedback(f: Feedback) {
-  this.dialogFeedback = f;
-  this.dialogImage = null;
-  this.dialogVideo = null;
-  this.dialogOpen = true;
-}
+  openFeedback(f: Feedback) {
+    this.dialogFeedback = f;
+    this.dialogImage = null;
+    this.dialogVideo = null;
+    this.dialogOpen = true;
+  }
 
-closeDialog() {
-  this.dialogOpen = false;
-  this.dialogImage = this.dialogVideo = null;
-  this.dialogFeedback = null;
-}
-
-
-
-  // openDialog(f: Feedback) {
-  //   this.dialogData = f;
-  //   this.dialogOpen = true;
-  // }
-
-  // closeDialog() {
-  //   this.dialogOpen = false;
-  //   this.dialogData = null;
-  // }
-
+  closeDialog() {
+    this.dialogOpen = false;
+    this.dialogImage = this.dialogVideo = null;
+    this.dialogFeedback = null;
+  }
 
   get totalPages(): number {
     const length = this.activeTab === 'photos'
