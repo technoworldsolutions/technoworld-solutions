@@ -1,0 +1,114 @@
+<div class="gallery-container">
+    <div class="nav-tabs">
+        <h2 class="title">Gallery &gt; {{ activeTab | titlecase }}</h2>
+        <div class="tabs">
+            <button class="tab" [class.active]="activeTab==='photos'" (click)="selectTab('photos')">Photos</button>
+            <button class="tab" [class.active]="activeTab==='videos'" (click)="selectTab('videos')">Videos</button>
+            <button class="tab" [class.active]="activeTab==='feedback'" (click)="selectTab('feedback')">Customers
+                Feedback</button>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h1 class="glow-fade">Welcome to Gallery</h1>
+            <p class="glow-fade">Our work and Customers speaks everything!</p>
+        </div>
+    </div>
+
+    <div class="pagination-info" *ngIf="totalPages > 1">
+        Page
+        <input type="number" [(ngModel)]="inputPage" (keydown.enter)="goToInputPage()" min="1" [max]="totalPages"
+            class="page-input no-spinner" />
+        of {{ totalPages }}
+        <button (click)="goToInputPage()" class="go-btn">Go</button>
+    </div>
+
+    <!-- <div class="grid-container" [ngSwitch]="activeTab">
+        <ng-container *ngSwitchCase="'photos'">
+            <div class="grid photo-card" *ngFor="let src of pagedPhotos">
+                <img [src]="src" alt="Photo">
+            </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="'videos'">
+            <div class="grid video-card" *ngFor="let vid of pagedVideos">
+                <video [src]="vid" controls></video>
+            </div>
+        </ng-container>
+        <ng-container *ngSwitchCase="'feedback'">
+            <div class="grid feedback-card" *ngFor="let f of pagedFeedback">
+                <img [src]="f.image" alt="Work Photo" (click)="openDialog(f)">
+                <div class="review">{{f.review}}</div>
+                <div class="client">— {{f.client}}</div>
+            </div>
+        </ng-container>
+    </div> -->
+
+    <div class="grid-container" [ngSwitch]="activeTab">
+  <ng-container *ngSwitchCase="'photos'">
+    <div class="card square" *ngFor="let src of pagedPhotos">
+      <img [src]="src" alt="Photo" (click)="openImage(src)">
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'videos'">
+    <div class="card square" *ngFor="let vid of pagedVideos">
+      <video [src]="vid" (click)="openVideo(vid)"></video>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'feedback'">
+    <div class="card square feedback" *ngFor="let f of pagedFeedback" (click)="openFeedback(f)">
+      <img [src]="f.image" alt="Work Photo">
+      <div class="info">
+        <div class="review">{{ f.review }}</div>
+        <div class="client">— {{ f.client }}</div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<!-- Popup -->
+<div class="dialog-backdrop" *ngIf="dialogOpen" (click)="closeDialog()">
+  <div class="dialog" (click)="$event.stopPropagation()">
+    <button class="close" (click)="closeDialog()">✕</button>
+    <img *ngIf="dialogImage" [src]="dialogImage" alt="Enlarged view">
+    <video *ngIf="dialogVideo" controls [src]="dialogVideo"></video>
+    <div *ngIf="dialogFeedback">
+      <img src="{{dialogFeedback.image}}" alt="imgage urls">
+      <!-- <p class="image">{{dialogFeedback.image}}</p> -->
+      <p class="review">{{dialogFeedback.review}}</p>
+      <p class="client">— {{dialogFeedback.client}}</p>
+    </div>
+  </div>
+</div>
+
+
+
+    <div class="pagination-controls" *ngIf="totalPages > 1">
+        <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">Prev</button>
+
+        <ng-container *ngFor="let page of visiblePages">
+            <button *ngIf="isNumber(page); else ellipsis" (click)="goToPage(page)"
+                [class.active]="currentPage === page">
+                {{ page }}
+            </button>
+            <ng-template #ellipsis>
+                <button disabled class="ellipsis">…</button>
+            </ng-template>
+        </ng-container>
+
+        <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+    </div>
+
+
+
+    <!-- <div class="dialog-backdrop" *ngIf="dialogOpen" (click)="closeDialog()">
+        <div class="dialog" (click)="$event.stopPropagation()">
+            <button class="close" (click)="closeDialog()">✕</button>
+            <img [src]="dialogData?.image" alt="Enlarged work photo">
+            <p class="review">{{dialogData?.review}}</p>
+            <p class="client">— {{dialogData?.client}}</p>
+        </div>
+    </div> -->
+</div>

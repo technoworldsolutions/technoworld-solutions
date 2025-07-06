@@ -1,0 +1,135 @@
+.footer {
+  background-color: #001240;
+  color: white;
+  padding: 40px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+
+    .footer-column {
+      flex: 1 1 250px;
+
+      .custom-link {
+        color: #ccc;
+        text-decoration: none;
+        text-wrap: wrap;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+        h3 {
+          font-size: 20px;
+          margin-bottom: 10px;
+          border-bottom: 2px solid #fff;
+          display: inline-block;
+          padding-bottom: 5px;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            margin-bottom: 8px;
+
+            a {
+              color: #ccc;
+              text-decoration: none;
+
+              &:hover {
+                color: #fff;
+              }
+            }
+          }
+        }
+
+        p {
+          margin-bottom: 10px;
+
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .logo-section {
+        img {
+          width: 80px;
+          height: auto;
+          margin-bottom: 10px;
+        }
+
+        h3 {
+          font-size: 30px;
+          margin: 0 0 5px 0;
+        }
+
+        .sub_heading {
+          font-size: 1rem;
+        }
+
+        .social-icons {
+          a {
+            color: white;
+            font-size: 24px;
+            margin-right: 24px;
+            text-decoration: none;
+
+            &:hover {
+              color: #aaa;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #bbb;
+      border-top: 1px solid #444;
+      padding-top: 10px;
+
+      a {
+        color: #bbb;
+        text-decoration: none;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 24px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+
+    i {
+      line-height: 44px;
+    }
+
+    &:hover {
+      background-color: #0d47a1;
+    }
+  }

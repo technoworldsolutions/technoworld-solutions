@@ -1,0 +1,71 @@
+<header class="about-us-header">
+    <div>
+        <h1 class="fade-in-text">ABOUT US</h1>
+    </div>
+</header>
+
+<section class="about-us-section">
+    <div class="container">
+
+        <!-- About Us Header -->
+        <header class="about-header">
+            <div class="about-header-container">
+                <!-- Left Column: Image -->
+                <div class="workshop-image animate-from-left">
+                    <img src="https://res.cloudinary.com/dn5tfo97m/image/upload/c_crop,ar_4:3,e_sharpen/v1751794640/Workshop_Photo_ow5lcf.jpg"
+                        alt="Workshop" />
+                </div>
+
+                <!-- Right Column: About Us Text -->
+                <div class="about-text animate-from-right">
+                    <h1>About TechnoWorld Solutions</h1>
+                    <p>
+                        Founded in 2019 and fully operational since February 4, 2020, TechnoWorld Solutions is a premier
+                        precision metal fabrication workshop based in Chalisgaon, Dist. Jalgaon (MH). We take pride in
+                        our mastery of laser cutting, fabrication, and custom metalwork, delivering impeccable quality
+                        with every intricate cut. Serving both residential and industrial clients, our dedication and
+                        care shine through in every project we undertake. We are committed to delivering excellence and
+                        innovation in our every project.
+                    </p>
+                </div>
+            </div>
+        </header>
+
+
+
+        <!-- What We Do -->
+        <section class="what-we-do">
+            <h2>What We Do</h2>
+            <div class="services">
+                <div class="service" *ngFor="let service of services">
+                    <img [src]="service.iconUrl" [alt]="service.title" class="service-icon" />
+                    <h3>{{ service.title }}</h3>
+                    <div [innerHTML]="service.description" class="service-description"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission and Vision -->
+        <section class="mission-vision">
+            <div class="mission-circle" *ngFor="let item of missionVisionData">
+                <h2>{{ item.title }}</h2>
+                <div [innerHTML]="item.description" class="circle-description"></div>
+            </div>
+        </section>
+
+
+        <!-- Team -->
+        <section class="team">
+            <h2>TechnoWorld Family</h2>
+            <div class="team-members">
+                <div class="team-member" *ngFor="let member of teamMembers">
+                    <img [src]="member.photo" [alt]="member.name" />
+                    <h3>{{ member.name }}</h3>
+                    <p>{{ member.position }}</p>
+                    <p>{{ member.contact }}</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</section>

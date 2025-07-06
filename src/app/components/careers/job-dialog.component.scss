@@ -1,0 +1,24 @@
+h3 {
+    font-size: 24px;
+    padding: 30px 30px 0 30px;
+}
+mat-dialog-content {
+    margin: -16px 10px 0px 10px;
+
+    p {
+        margin: 0.5rem 0;
+    }
+}
+
+mat-dialog-actions {
+    button {
+        background: #d8e7f6;
+    }
+}
+
+//dark mode
+:host-context(.dark-mode) {
+    h3 {
+        color: #000000;
+    }
+}

@@ -1,0 +1,81 @@
+<!-- contact-us.component.html -->
+<section class="contact-us-header">
+    <h1 class="fade-in">CONTACT US</h1>
+    <h4>Can we help you? Please feel free to contact us.</h4>
+</section>
+
+<section class="contact-us-content">
+    <div class="contact-details">
+        <div class="card" (click)="openWhatsApp()">
+            <img src="https://cdn-icons-png.flaticon.com/128/1384/1384055.png" alt="WhatsApp">
+            <h4 class="contact-heading">WhatsApp</h4>
+            <p>+91 7767081367</p>
+        </div>
+        <div class="card" (click)="openEmail()">
+            <img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="Email">
+            <h4 class="contact-heading">Email</h4>
+            <!-- <a href="mailto:ravindraborse49@gmail.com">ravindraborse49&#64;gmail.com</a> -->
+            <p>ravindraborse49&#64;gmail.com</p>
+        </div>
+        <div class="card" (click)="openMap()">
+            <img src="https://cdn-icons-png.flaticon.com/128/9062/9062564.png" alt="Map">
+            <h4 class="contact-heading">Address</h4>
+            <p>TechnoWorld Solutions, Near New Rani Park Hotel, Dhule Road, Chalisgaon, Dist. Jalgaon (MH), 424101.</p>
+        </div>
+    </div>
+
+    <div class="contact-form-card">
+        <h4>Let's Start a Conversation</h4>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <input type="text" placeholder="Your Name" formControlName="name">
+            <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" class="error">
+                Name is required.
+            </div>
+
+            <input type="email" placeholder="Your Email" formControlName="email">
+            <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['required']"
+                class="error">
+                Email is required.
+            </div>
+            <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['email']" class="error">
+                Please enter a valid email.
+            </div>
+
+            <div class="phone-group">
+                <select class="country-code" formControlName="countryCode">
+                    <option value="+91">+91 (India)</option>
+                    <option value="+93">+93 (Afghanistan)</option>
+                    <option value="+33">+33 (France)</option>
+                    <option value="+64">+64 (New Zealand)</option>
+                    <option value="+7">+07 (Russia)</option>
+                    <option value="+1">+01 (USA)</option>
+                    <option value="+44">+44 (UK)</option>
+                    <option value="+61">+61 (Australia)</option>
+                    <!-- Add more as needed -->
+                </select>
+
+                <input type="tel" placeholder="Phone Number" formControlName="phone" maxlength="10" />
+            </div>
+            <div *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid" class="error">
+                Phone number is required.
+            </div>
+
+            <textarea placeholder="Your Message" formControlName="message"></textarea>
+            <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid" class="error">
+                Message is required.
+            </div>
+
+            <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+        </form>
+
+    </div>
+</section>
+
+<!-- pop up -->
+<div class="modal-backdrop" *ngIf="showPopup">
+  <div class="modal-box">
+    <button class="close-btn" (click)="closePopup()">×</button>
+    <h2>Thank You!</h2>
+    <p>Your message has been submitted to <strong>TechnoWorld Solutions</strong>.</p>
+  </div>
+</div>

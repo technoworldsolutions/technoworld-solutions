@@ -1,0 +1,123 @@
+.carousel-slide {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .carousel-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+
+    h2 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 10px;
+
+  .service-card {
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      display: block;
+      margin: 12px auto 5px auto;
+    }
+
+    h3 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+
+      // Different gradients
+    &:nth-child(1) {
+      background: linear-gradient(135deg, #1970f2 0%, #8dbaf4 100%);
+    }
+
+    &:nth-child(2) {
+      background: linear-gradient(135deg, #f2709c 0%, #ff9472 100%);
+    }
+
+    &:nth-child(3) {
+      background: linear-gradient(135deg, #42e695 0%, #3bb2b8 100%);
+    }
+
+    &:nth-child(4) {
+      background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+    }
+
+          &:hover {
+                transform: translateY(-10px) scale(1.05);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+                background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+                color: #fff;
+                border: #333333 solid 1px;
+  }
+    
+  }
+}
+
+:host-context(.dark-mode) .service-card {
+  background: #1e1e1e;
+  color: #eee;
+
+  h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #000000;
+    margin: 10px 0;
+  }
+
+  p {
+    color: #181818;
+    font-size: 18px;
+  }
+}

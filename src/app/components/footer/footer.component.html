@@ -1,0 +1,65 @@
+<footer class="footer">
+  <div class="footer-content">
+
+    <!-- Column 1: Logo and Company -->
+    <div class="footer-column logo-section">
+      <div routerLink="/" (click)="scrollToTop()" style="cursor: pointer;">
+        <img src="https://res.cloudinary.com/dn5tfo97m/image/upload/v1751032469/TechLogo_jnw0bn.jpg"
+          alt="TechnoWorld Logo" />
+        <div routerLink="/" (click)="scrollToTop()" style="cursor: pointer;">
+          <h3>TechnoWorld Solutions</h3>
+          <h2 class="sub_heading">Laser Cutting & Engineering Works</h2>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.whatsapp.com/" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/ravindra_borse_1224" aria-label="Instagram" target="_blank"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/?lang=en" aria-label="X (Twitter)" target="_blank"><i
+            class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Explore -->
+    <div class="footer-column">
+      <h3>Explore</h3>
+      <ul>
+        <li><a routerLink="/laser-cutting" (click)="scrollToTop()">Laser Cutting</a></li>
+        <li><a routerLink="/fabrication" (click)="scrollToTop()">Fabrication</a></li>
+        <li><a routerLink="/gallery" (click)="scrollToTop()">Gallery</a></li>
+        <li><a routerLink="/about-us" (click)="scrollToTop()">About</a></li>
+        <li><a routerLink="/careers" (click)="scrollToTop()">Careers</a></li>
+      </ul>
+    </div>
+
+
+    <!-- Column 3: Contact -->
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Near New Rani Park Hotel, Dhule Road, Chalisgaon, Dist. Jalgaon-424101
+      </p>
+      <p><i class="fas fa-phone-alt"></i> +91 7767081367</p>
+      <p><i class="fas fa-envelope"></i> ravindraborse49&#64;gmail.com</p>
+      <!-- <p href=""><i class="fas fa-globe"></i> http://localhost:4200</p> -->
+      <a href="https://technoworldsolutions.github.io/technoworld-solutions/" target="_blank" class="custom-link">
+        <i class="fas fa-globe"></i> Visit to TechnoWorld Solution
+      </a>
+      </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    © 2025 TechnoWorld Solutions. All rights reserved. <br>
+    <a href="https://www.instagram.com/the_akshay_borse_04" target="_blank">
+      Made with 💖 by Akshay Borse.
+    </a>
+  </div>
+</footer>
+
+<!-- 🔼 Back to Top Button (OUTSIDE the footer!) -->
+<button class="back-to-top" title="Go to top" (click)="scrollToTop()" *ngIf="showBackToTop">
+  <i class="fas fa-circle-up"></i>
+</button>

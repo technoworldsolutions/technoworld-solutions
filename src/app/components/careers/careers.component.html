@@ -1,0 +1,49 @@
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>We're Hiring!</h1>
+        <p>Build your future with TechnoWorld Solutions. Explore career opportunities.</p>
+        <button mat-raised-button class="explore-btn">Explore Openings</button>
+    </div>
+</section>
+
+<!-- Why Join Us -->
+<section class="why-join-us">
+    <h2>Why Join TechnoWorld Solutions?</h2>
+    <p>We believe in growth, creativity, and collaboration. Join us in shaping the future!</p>
+</section>
+
+<!-- Benefits -->
+<section class="benefits-grid">
+    <div class="benefit" *ngFor="let benefit of benefits">
+        <img [src]="benefit.iconUrl" [alt]="benefit.title" class="benefit-icon" />
+        <h4>{{ benefit.title }}</h4>
+        <p>{{ benefit.description }}</p>
+    </div>
+</section>
+
+<!-- Job Openings -->
+<section class="careers-section">
+    <h2 class="title">Current Openings</h2>
+    <div class="job-cards">
+        <mat-card *ngFor="let job of jobList" class="job-card">
+            <mat-card-title>{{ job.title }}</mat-card-title>
+            <mat-card-content>
+                <p><strong>Department:</strong> {{ job.department }}</p>
+                <p><strong>Location:</strong> {{ job.location }}</p>
+                <p><strong>Type:</strong> {{ job.type }}</p>
+                <p>{{ job.description }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="openJobDialog(job)">Apply Now</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+    <h2>Ready to join?</h2>
+    <p>We’d love to hear from passionate individuals.</p>
+    <button mat-raised-button color="primary">Send Your Resume</button>
+</section>
