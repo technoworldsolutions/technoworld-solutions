@@ -14,7 +14,7 @@ import { RouterModule, Router } from '@angular/router';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent { 
+export class FooterComponent {
   showBackToTop = false;
 
   @HostListener('window:scroll', [])
@@ -26,5 +26,9 @@ export class FooterComponent {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  constructor(private router: Router) {}
+  openWhatsApp() {
+    window.open('https://wa.me/917767081367', '_blank');
+  }
+
+  constructor(private router: Router) { }
 }
